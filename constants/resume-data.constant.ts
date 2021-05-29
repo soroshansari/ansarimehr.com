@@ -7,7 +7,7 @@ export const resumeData = {
     image: "/images/profilepic.jpg",
     bio:
       "Knowledgeable and fully trained in Node.js, React (MERN Stack), NextJs, Angular (MEAN Stack), ASP.NET C#, Hybrid Mobile Applications (Ionic and Cordova) and DevOps with AWS. Proven success in developing many Web, Android, and iOS Applications in different startups and companies, executing web site security measures, and offering innovative solutions to complex issues. Instrumental in defining and employing procedures for ongoing web site revision. Expert in the development of high quality, and innovative software solutions. Adept at writing code that improves website accessibility, user experience, performance, and operational functionality. Solid analytical, technical, & communication skills with ability to work well in a team environment.",
-    contactMessage: "Feel free to contact me.",
+    contactMessage: "You wish to have more information, just contact me.",
     email: "sorosh.ansari@gmail.com",
     phone: "+60 116 110 9545",
     address: {
