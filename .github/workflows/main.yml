@@ -19,16 +19,13 @@ jobs:
           node-version: 14
       
       - name: Install dependencies
-        run: npm ci
-        
-      - name: Run tests
-        run: npm test
+        run: yarn --frozen-lockfile
       
       - name: Download `.serverless` state from S3
         run: aws s3 sync s3://serverless.ansarimehr.com/prod/.serverless .serverless --delete 
 
       - name: Deploy to AWS
-        run: npm run deploy
+        run: yarn deploy
             
       - name: Upload `.serverless` state to S3
         run: aws s3 sync .serverless s3://serverless.ansarimehr.com/prod/.serverless --delete 
