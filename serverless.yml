@@ -1,0 +1,15 @@
+name: MyApplication
+
+nextApp:
+  component: "@sls-next/serverless-component@1.19.0"
+  inputs:
+    domain:
+      - ${env.SUB_DOMAIN}
+      - ${env.DOMAIN}
+    memory: 1024
+    build:
+      env:
+        EMAIL: ${env.EMAIL}
+        REFRESH_TOKEN: ${env.REFRESH_TOKEN}
+        CLIENT_SECRET: ${env.CLIENT_SECRET}
+        CLIENT_ID: ${env.CLIENT_ID}
