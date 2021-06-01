@@ -17,15 +17,21 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      
+
       - name: Install dependencies
         run: yarn --frozen-lockfile
-      
+
       - name: Download `.serverless` state from S3
-        run: aws s3 sync s3://serverless.ansarimehr.com/prod/.serverless .serverless --delete 
+        run: aws s3 sync s3://serverless.ansarimehr.com/prod/.serverless .serverless --delete
+
+      - name: Download `.serverless_nextjs` state from S3
+        run: aws s3 sync s3://serverless.ansarimehr.com/prod/.serverless_nextjs .serverless_nextjs --delete
 
       - name: Deploy to AWS
         run: yarn deploy
-            
+
       - name: Upload `.serverless` state to S3
-        run: aws s3 sync .serverless s3://serverless.ansarimehr.com/prod/.serverless --delete 
+        run: aws s3 sync .serverless s3://serverless.ansarimehr.com/prod/.serverless --delete
+
+      - name: Upload `.serverless_nextjs` state to S3
+        run: aws s3 sync .serverless_nextjs s3://serverless.ansarimehr.com/prod/.serverless_nextjs --delete

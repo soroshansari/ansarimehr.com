@@ -1,15 +1,19 @@
-name: MyApplication
+name: ansarimehr
 
 nextApp:
-  component: "@sls-next/serverless-component@1.19.0"
+  component: "@sls-next/serverless-component@1.17.0"
   inputs:
-    domain:
-      - ${env.SUB_DOMAIN}
-      - ${env.DOMAIN}
-    memory: 1024
-    build:
-      env:
-        EMAIL: ${env.EMAIL}
-        REFRESH_TOKEN: ${env.REFRESH_TOKEN}
-        CLIENT_SECRET: ${env.CLIENT_SECRET}
-        CLIENT_ID: ${env.CLIENT_ID}
+    bucketName: ansarimehr-serverless-data
+    cloudfront:
+      defaults:
+        forward:
+          headers: [Host]
+    domain: "ansarimehr.com"
+    domainType: "both"
+    domainRedirects:
+      www.ansarimehr.com: https://ansarimehr.com
+    publicDirectoryCache:
+      value: public, max-age=604800
+      test: /\.(gif|jpe?g|png|txt|xml)$/i
+    runtime: nodejs14.x
+    memory: 512
